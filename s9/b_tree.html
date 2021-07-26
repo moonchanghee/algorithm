@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <script>
+//이진 검색 트리 
+
+function Node(data, left, right) {
+    this.data = data
+    this.left = left
+    this.right = right
+    this.show = show 
+}
+
+function show(){
+    return this.data;
+}
+
+function BST(){
+    this.root = null;
+    this.insert = insert
+    this.inOrder = inOrder;
+    this.getMin = findMin
+    this.getMax = findMax
+}
+
+function insert(data){
+    var node = new Node(data,null,null)
+    if(this.root == null){
+        this.root = node
+    }else{
+        var current = this.root
+        var parent
+        while(true){
+            parent = current
+            if(data < current.data){
+                current = current.left
+                if(current == null){
+                    parent.left = node
+                    break;
+                }
+            }else{
+                current = current.right
+                if(current == null){
+                    parent.right = node;
+                    break;
+                }
+            }
+        }
+    }
+}
+
+
+//중위 
+function inOrder(node){
+    console.log("node" , node)
+    if(node != null){
+        inOrder(node.left)
+        console.log(node.show() + "")
+        inOrder(node.right)
+    }
+}
+
+
+//전위
+function preOrder(node){
+    if(node != null){
+        console.log(node.show() + "");
+        preOrder(node.left)
+        preOrder(node.right)
+    }
+}
+
+
+//후위
+function postOrder(node){
+    if(node != null){
+        postOrder(node.left)
+        postOrder(node.right)
+        console.log(node.show() + "")
+    }
+}
+
+
+//최소 
+function findMin(){
+    var current = this.root
+    while(!(current.left == null)){
+        current = current.left
+    }
+return current.data
+}
+
+
+
+//최대
+function findMax(){
+    var current = this.root
+    while(!(current.right == null)){
+        current = current.right
+    }
+    return current.data
+}
+
+var num = new BST() //이진트리는 한번 생성
+num.insert(23); //노드 생성
+num.insert(5);
+num.insert(45);
+num.insert(26);
+num.insert(12);
+num.insert(99);
+inOrder(num.root);
+// postOrder(num.root)
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

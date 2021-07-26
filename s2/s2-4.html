@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.03.11
+             * 제목: 점수계산
+             * 내용: 간단하지만 구현을 생각할 때 조금 헷갈림
+            **/
+            function solution(total , params){
+            let answer=0
+            let svcScore = 0
+            
+            for(e of params){
+                if(e ==1){
+                    svcScore++;
+
+                }else{
+                    svcScore =0 
+                }
+                answer += svcScore
+            }
+            
+            return answer
+            }
+
+
+            total = 10
+            params = [1,0,1,1,1,0,0,1,1,0]
+            console.log("answer::",solution(total , params));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

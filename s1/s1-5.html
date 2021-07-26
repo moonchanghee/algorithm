@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.03.08  
+             * 제목: 6페이지 홀수문제  
+             * 내용: map을 사용하여 홀수인 값만 더하고 저장, 저장과 동시에 홀수를 arr 배열에 푸쉬, arr배열 정렬 
+             */
+            function solution(params){
+                let answer=0
+                let sum = 0
+                let arr = []
+                params.map((e) => {
+                    if(e%2 != 0){
+                        sum += e
+                        arr.push(e)
+                    }
+                })
+                arr.sort()
+                console.log(arr[0])
+                return sum;
+            }
+            params = [12,77,38,41,53,92,85]
+            console.log("answer::",solution(params));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

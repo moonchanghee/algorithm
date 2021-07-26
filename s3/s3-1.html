@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.05.03
+             * 제목: 희문 문자열
+             * 내용: 대소문자 구분을 신경쓰지않기때문에 소문자로 변경,,reverse()를 사용하여 배열을 뒤집고 params와 비교 비교 알파벳이 
+             * 일치할때마다 카운트시키고 카운트값이 배열길이와 같으면 yes반환,, 아니면 no반환
+            **/
+            function solution(params){
+            let answer=0
+            let arr = params.toLowerCase().split("").reverse()
+            
+            params.toLowerCase().split("").map((e,index) => {
+                if(e == arr[index]){
+                    answer++
+                }
+            })
+         if(answer == params.length){
+            return "YES"
+         }else{
+             return "NO"
+         }
+            
+            }
+
+            let params="Goog";
+            console.log("answer::",solution(params));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

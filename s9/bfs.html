@@ -1,0 +1,91 @@
+<!-- <html>
+    <head>
+        <script>
+
+//bfs 알고리즘 (너비 우선 탐색)
+const graph = {
+  A: ["B", "C"],
+  B: ["A", "D"],
+  C: ["A", "G", "H", "I"],
+  D: ["B", "E", "F"],
+  E: ["D"],
+  F: ["D"],
+  G: ["C"],
+  H: ["C"],
+  I: ["C", "J"],
+  J: ["I"]
+};
+
+const bfs = (graph, startNode) => {
+    let visited = [] //탐색을 마친 노드들 
+    let needVisit = [] // 탐색해야할 노드들 //두개의 큐를 사용
+
+    needVisit.push(startNode) //노드 탐색 시작 
+    while(needVisit.length !== 0){ // 탐색해야할 노드가 남아있다면
+        const node = needVisit.shift(); //선입 선출 방식 (큐)
+        console.log("1" , node)
+        console.log("2" , graph[node])
+        if(!visited.includes(node)){ // 해당 노드가 탐색된 적 없다면 
+            visited.push(node);
+            needVisit = [...needVisit, ...graph[node]]
+            console.log("3" , needVisit)
+        }
+
+    }
+return visited;
+}
+
+console.log("answer",bfs(graph, "A"))
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html> -->
+
+
+
+
+<html>
+    <head>
+        <script>
+
+//bfs 알고리즘 (너비 우선 탐색)
+const graph = {
+  A: ["B", "C"],
+  B: ["A", "D"],
+  C: ["A", "G", "H", "I"],
+  D: ["B", "E", "F"],
+  E: ["D"],
+  F: ["D"],
+  G: ["C"],
+  H: ["C"],
+  I: ["C", "J"],
+  J: ["I"]
+};
+
+const bfs = (graph , startNode) => {
+    visitNode = []  //탐색해야하는 노드들 
+    endNode = []  //탐색을 마친 노드들
+    
+    visitNode.push(startNode) 
+
+    while(visitNode.length != 0){
+        node = visitNode.shift()
+        if(!endNode.includes(node)){ // 해당 노드가 탐색을 마친 노드에 없다면 
+            endNode.push(node) // 탐색을 마친 노드 리스트에 넣어준다
+            visitNode = [...visitNode , ...graph[node]] //해당 노드의 자식 노드를 넣는다.              
+        }
+    }
+return endNode
+}
+
+console.log("answer",bfs(graph, "A"))
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

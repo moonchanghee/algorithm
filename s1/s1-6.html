@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.03.08  
+             * 제목: 10부제  
+             * 내용:   
+            **/
+            function solution(day , cars){
+                let answer=0
+
+                cars.map((e) => {
+                   var newData = (e - Math.floor(e/10)*10)
+                   console.log(newData)
+                   console.log(day)
+                    if( newData == day ){
+                        answer++
+                    }
+                })
+
+                
+                return answer;
+            }
+            day = 0
+            cars = [12,20,54,30,87,91,30]
+
+            console.log("answer::",solution(day , cars));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

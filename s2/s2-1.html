@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.03.10
+             * 제목: 큰 수 출력하기
+             * 내용: reduce를 사용하여 기본값으로 e(6)을 넣어주고 그다음부터 다음 인덱스값을 비교해준다.. 마지막으로 다음 인덱스값을 리턴해준다.
+            **/
+            function solution(e,params){
+            let answer=[]
+            params.reduce((acc,crr) => {
+                // console.log(acc ,crr)
+                if(acc<crr){
+                    answer.push(crr)
+                }   
+                return crr
+            },e)
+            
+
+            return answer
+            }
+            params = [7,3,9,5,6,12]
+            console.log("answer: ",solution(6,params));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

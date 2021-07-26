@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.03.09
+             * 제목: 가운데 문자 출력 
+             * 내용: 너무쉬움
+            **/
+            function solution(params){
+            let length = params.length
+            let index = Math.floor(length/2)
+            if(length%2 != 0){
+                return params[index]  
+            }else{
+                return params[index-1] + params[index]  
+            }    
+
+            }
+            params = "1234567891"
+            console.log("answer::",solution(params));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

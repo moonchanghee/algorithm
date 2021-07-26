@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.03.08  
+             * 제목: 삼각형 판별하기 
+             * 내용: 배열에서 가장큰수를 max에 넣는다. for문사용하여 가장큰수를 제거해준다. 조건문으로 가장큰 값을 제거한 나머지 값으로 yes no판별해준다 
+             */
+            function solution(params){
+                // let answer=0;
+                let max = params.reduce((acc, crr) => {
+                    return  acc > crr ? acc : crr 
+                })
+                for(var i=0;i<=2;i++){
+                    if(params[i] === max){
+                        params.splice(i,1)
+                    }
+                }
+                if(max < params[0] + params[1]){
+                    return "yes"
+                }else{
+                    return "no"
+                }
+
+
+                // return answer;
+            }
+
+            let params=[13,33,17];
+            console.log("answer::",solution(params));
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

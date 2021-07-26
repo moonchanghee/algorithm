@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <script>
+//이진 검색 트리 
+/*
+* 1. 트리의 루트 노드가 null인지 확인 
+* 2. 현재 노드가 중복되었는지 확인
+* 3. 위의 두가지 모두 만족하지 않으면 새로운 노드라는 뜻이며 루트 노드의 왼쪽인지 오른쪽인지 확인
+* 4. 현재 노드(삽입중인 노드)의 값이 루트 노드의 값보다 작으면 왼쪽에 삽입
+*/
+
+
+function Node(data,left,right){
+    this.data = data
+    this.root = null
+    this.left = null
+    this.right = null
+    this.show = show 
+}
+
+function show(){
+    return this.data;
+}
+
+
+function BST(){
+    this.root = null
+    this.insert = insert
+    this.find = find
+}
+function insert(data){
+    console.log("insert")
+  let node = new Node(data)
+ if(this.root == null){
+    this.root = node
+ }else{
+     let current = this.root //현재 노드
+     let parent
+
+        while(1){
+            parent = current
+            if(data < current.data){
+                current = current.left
+                if(current == null){
+                    parent.left = node 
+                    break    
+                }
+            }else {
+                current = current.right
+                if(current == null){
+                    parent.right = node
+                    break
+                }
+            }
+        }
+    }
+}
+
+
+//중위
+function inOrder(node){
+    console.log("node.show" , node.show)
+    if(node != null){
+        inOrder(node.left)
+        console.log(node.show() + "")
+        inOrder(node.right) 
+    }
+}
+
+
+function find(data){
+ 
+}
+
+let btree = new BST()
+btree.insert(10)
+btree.insert(5)
+
+inOrder(btree.root);
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

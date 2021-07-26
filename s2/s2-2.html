@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.03.10
+             * 제목: 보이는 학생
+             * 내용: 현재 가장 큰값을 저장하는 current,, 값을 비교하여 뒤 인덱스 값이 크면 보이는 수인 answer을 증가시키고 current값을 바꿔준다,, 바꾼 current값을 리턴해줌 
+            **/
+            function solution(params){
+            let answer=1
+            let current = 0;
+            params.reduce((acc,crr) => {
+                if(acc < crr){
+                    console.log(acc,crr)
+                    answer++
+                    current = crr
+                }    
+                return current
+            })
+            return answer
+            }
+            params = [130,135,148,140,145,150,150,153]
+            console.log("answer::",solution(params));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

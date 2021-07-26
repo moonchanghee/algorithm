@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.03.11
+             * 제목: 격자판 최대합
+             * 내용: 여기서부터 좀 난이도가 있다고 느낌
+            **/
+            function solution(params){
+            let length = params.length
+            let answer=0
+            let sum1 = 0
+            let sum2 = 0
+
+                
+            for(var i=0; i<length; i++){
+                sum1 = sum2 =0
+                for(var j=0; j<length; j++){
+                    sum1 += params[i][j]
+                    sum2 += params[j][i]
+                }
+                answer = Math.max(answer , sum1, sum2 )
+            }
+            sum1 = sum2 =0
+            for(var i=0; i<length; i++){
+                sum1 += params[i][i]
+                sum2 += params[i][length-i-1]
+                answer = Math.max(answer ,sum1,sum2)
+            }
+            return answer
+            }
+
+
+        let params= [[10, 13, 10, 12, 15], 
+                    [12, 39, 30, 23, 11],
+                    [11, 25, 50, 53, 15],
+                    [19, 27, 29, 37, 27],
+                    [19, 13, 30, 13, 19]];
+        console.log("answer::",solution(params));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

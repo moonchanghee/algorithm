@@ -1,0 +1,28 @@
+<html>
+    <head>
+        
+        <script>
+            /**
+             * 작성일: 2021.03.08  
+             * 제목: 세 수 중 최솟값
+             * 내용: 리듀스 사용
+             */
+            function solution(params){
+                // let answer=0;
+                
+                let answer = params.reduce((acc, crr) => {
+
+                    return acc < crr ? acc : crr
+                },100)
+
+                return answer;
+            }
+
+            let params=[6,5,11];
+            console.log("answer::",solution(params));
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.03.09  
+             * 제목: A를 #으로 
+             * 내용: split("")을 사용하여 받은 문자열을 배열로 변환 후 map을 사용하여 해당값과 input값이 같아지면 answer값을 카운터해준다..
+            **/
+            function solution(string, input){
+            let answer=0
+            let stringArr = string.split("")
+            stringArr.map((e) => {
+                if(e == input){
+                    answer++
+                }
+            })
+            return answer
+            }
+            string = "COMPUTERPROGRAMMING"
+            input = "R"
+            console.log("answer::",solution(string ,input));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

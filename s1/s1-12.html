@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.03.10
+             * 제목: 중복문자 제거
+             * 내용: indexof 사용법 ,, params.indexOf() 는  params에 있는 문자와 괄호안의 문자를 비교하여 해당 문자가 처음나오는 인덱스번호를 알려준다 따라서 인덱스 번호와 indexOf가 다르면 
+             * 중복된 문자가 있다는 뜻
+            **/
+            function solution(params){
+            let answer=""
+            
+            params.split("").map((e , index) => {
+                console.log(index,params.indexOf(e))
+                if(index ===params.indexOf(e) ){
+                    answer+=e
+                }
+                // console.log(params)
+            })
+
+            return answer
+            }
+            params = "ksekkset"
+            console.log("answer::",solution(params));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html> 

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.03.10
+             * 제목: 중복단어 제거 
+             * 내용: 12번 문제랑 풀이 같음
+            **/
+            function solution(params){
+            let answer=[]
+            
+            params.map((e,index) => {
+                console.log(index,params.indexOf(e))
+                if(index === params.indexOf(e) ){
+                    answer.push(e)
+                }
+            })
+
+            return answer
+            }
+            params = ["good" ,"time" , "good" , "time" , "student"]
+
+            console.log("answer:",solution(params));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

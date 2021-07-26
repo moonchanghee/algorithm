@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.03.08  
+             * 제목: 일곱난쟁이 8page
+             * 내용: splice를 사용하여 해당 인덱스 값을 제거할 때 i,j순으로 삭제할 경우 앞에있는 인덱스 값이 먼저 삭제되어 j를 삭제할 때 인덱스가 바뀐상태에서 삭제되어 문제점이 있었음
+             * 따라서 j(뒤쪽 인덱스)를 먼저 삭제하고 앞에 있는 i인덱스를 삭제한다.
+            **/
+            function solution(params){
+                let answer=0
+                
+                let sum = params.reduce((acc, crr) => {
+                    return acc + crr
+                })
+                console.log(sum)
+                let length = params.length
+                for(var i=0; i<= length; i++){
+                    for(var j=0; j<= length; j++){
+                        if(i != j  ){
+                            if(sum - (params[i] + params[j]) == 100 ){
+                                console.log(i,j)
+                                // console.log(i,j)
+                                params.splice(j,1)
+                                params.splice(i,1)
+                                console.log(params)
+                                
+                            }
+                        }
+                    }
+                }
+                return answer;
+            }
+            params = [20,7,23,19,10,15,25,8,13]
+            console.log("answer::",solution(params));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
