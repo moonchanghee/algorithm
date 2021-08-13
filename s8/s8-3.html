@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.08.06
+             * 제목: 이진트리 순회 (깊이 우선 탐색)
+             * 내용: 이진트리 전위순회, 후위순회 연습
+            **/
+            function solution(params){
+            let answer=0
+            function dfs(params){
+                if(params > 7){
+                    return;
+                }else{
+                    console.log(params)
+                    dfs(params*2)
+                    dfs(params*2+1)
+                }   
+
+
+            }
+            dfs(params)
+
+            return answer
+            }
+            console.log("answer::",solution(1));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

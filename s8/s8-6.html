@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.08.11   
+             * 제목:  바둑이 승차
+             * 내용: 
+             * 철수는 그의 바둑이들을 데리고 시장에 가려고 한다. 그런데 그의 트럭은 c킬로그램 넘게 태울수 없다
+             * 철수는 c를 넘지 않으면서 그의 바둑이들을 가장 무겁게 태우고 싶다. n마리의 바둑이와 각 바둑이의
+             * 무게 w가 주어지면, 철수가 트럭에 태울 수 있는 가장 무거운 무게를 구하는 프로그램을 작성
+            **/
+            function solution(max,arr){
+            let answer=[], sum = 0, length = arr.length
+             
+            function dfs(v, sum){
+                if(length === v){
+                    if(sum <= max ){
+                        // console.log("dddd")
+                        // console.log(sum)
+                        return answer.push(sum)
+                    }
+                }else{
+                    dfs(v+1,sum + arr[v])
+                    dfs(v+1,sum)        
+                }
+            }
+            dfs(0,0)
+            answer.sort((a,b) => {
+                return b-a
+            })
+            return answer[0]
+            }
+            let arr=[81, 58, 42, 33, 61];
+            console.log(solution(259, arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

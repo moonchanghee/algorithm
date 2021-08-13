@@ -27,16 +27,18 @@ function BST(){
     this.root = null
     this.insert = insert
     this.find = find
+    this.del = del
+    this.max = max
+    this.min = min
 }
+
 function insert(data){
-    console.log("insert")
   let node = new Node(data)
  if(this.root == null){
     this.root = node
  }else{
      let current = this.root //현재 노드
      let parent
-
         while(1){
             parent = current
             if(data < current.data){
@@ -59,7 +61,6 @@ function insert(data){
 
 //중위
 function inOrder(node){
-    console.log("node.show" , node.show)
     if(node != null){
         inOrder(node.left)
         console.log(node.show() + "")
@@ -68,16 +69,81 @@ function inOrder(node){
 }
 
 
-function find(data){
- 
+function find(data){ //찾기 
+let current = this.root
+while(current.data != data){
+if(data > current.data ) {
+//오른쪽
+current = current.right
 }
+else{
+//왼쪽
+current = current.left
+}
+if(current == null){
+    return null
+}
+}
+return current
+}
+
+
+
+//삭제 
+function del(data){
+//경우의 수 
+//왼쪽
+//오른쪽
+//root? 
+//null?
+let child = this.root
+let parent = child 
+
+if(data == current.data){
+ console.log("같음")
+}else if(data < current.data){
+ //left
+ 
+
+}else if(data > current.data){
+ //right
+
+
+}
+return current
+}
+
+
+function max(data){
+    while(data.right != null){
+     data = data.right
+     max(data)
+    }
+    return data
+}
+
+function min(data){
+    while(data.left != null){
+     data = data.left
+     min(data)
+    }
+    return data
+}
+
 
 let btree = new BST()
 btree.insert(10)
 btree.insert(5)
-
+btree.insert(13)
+btree.insert(99)
+btree.insert(1)
+// console.log("btree" , btree)
+// inOrder(btree.root);
+btree.del(13)
 inOrder(btree.root);
+// console.log("btree" , btree)
 
+// console.log("find" ,btree.find(1))
         </script>
     </head>
     <body>

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.08.12
+             * 제목:  중복순열 구하기
+             * 내용: 1부터 n까지 번호가 적힌 구슬이 있다. 이 중 중복을 허락하어 m번을 뽑아 일렬로 나열하는 방법을 모두 출력하라
+             * 첫 번째 줄에 자연수 N(3<=N<=10)과 M(2<=M<=N) 이 주어집니다
+             * 첫 번째 줄에 결과를 출력합니다. 맨 마지막 총 경우의 수를 출력합니다.
+               출력순서는 사전순으로 오름차순으로 출력합니다.
+
+            **/
+            function solution(total,num){
+            let answer=[]
+            let tmp = Array.from({length : num}, () => 0)
+            console.log("tmp",tmp)
+            function reflection(v){
+                if(num == v){
+                    // answer.push(tmp) //깊은 복사 
+                    answer.push(tmp.slice())
+                    console.log(tmp)
+                }else{
+                    for(let i=1; i <= total; i++){
+                        tmp[v] = i
+                        reflection(v+1)
+                    }
+                    
+                }
+            } 
+
+            reflection(0)
+            return answer
+            }
+            params = ""
+            console.log(solution(3, 2));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

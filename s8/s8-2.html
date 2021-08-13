@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.08.05
+             * 제목: 재귀함수를 이용한 이진수 출력 
+             * 내용: 10진수 n이 입력되면 2진수로 변환하여 출력하는 프로그램 작성 단 재귀를 활용할것
+            **///toString false
+            function solution(params){
+                function sol2(params){
+                    let answer=0
+            // console.log(Number(params).toString(2))
+            if(params == 0)return
+            else{
+                sol2(parseInt(params/2))
+                console.log(params%2) //백트래킹 
+            }   
+            }
+            sol2(params)
+            
+            return answer
+            }
+            params = 11
+            console.log("answer::",solution(params));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

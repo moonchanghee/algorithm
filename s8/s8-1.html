@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.08.05
+             * 제목:  재귀함수
+             * 내용: 자연수 n이 입력되면 재귀함수를 이용하여 1부터 n까지를 출력하는 프로그램을 작성
+            false
+             **/ //****스택 프레임*****//선입선출
+            function solution(num){
+                function sol2(num){
+                    if(num ==0){
+                        return 0
+                    }else{
+                        sol2(num-1)
+                        console.log(num)
+                    }
+                    
+                } 
+                sol2(num)
+            }
+
+
+
+            let num = 7
+            console.log("answer::",solution(num));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
