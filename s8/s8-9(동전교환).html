@@ -13,13 +13,24 @@
              *  출력설명
              첫 번째 줄에 거슬러 줄 동전의 최소개수를 출력한다.
             **/
-            function solution(params){
-            let answer=0
-         
+            function solution(totalCount, arr){
+            let answer=Number.MAX_SAFE_INTEGER  
+                function reflection(v, sum){
+                    // if(sum > totalCount) return
+                    if(v > anser) return //불필요한 가지는 리턴시켜준다 (더안뻗게)...
+                    if(sum >=totalCount ){
+                        answer = Math.min(answer,v)
+                    }else{
+                        for(let i = 0; i< arr.length ;i++){
+                             reflection(v+1, sum + arr[i])
+                            }
+                    }
+                }
+                reflection(0,0)
             return answer
             }
-            params = ""
-            console.log("answer::",solution(params));
+            let arr=[1, 2, 5];
+            console.log(solution(15, arr));
 
         </script>
     </head>

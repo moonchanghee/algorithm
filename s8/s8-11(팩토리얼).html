@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.08.14
+             * 제목:  팩토리얼
+             * 내용: 자연수 n을 입력하면 n!값을 구하세요
+             * // 강의 풀이 확인  
+            **/
+           //my version
+            function solution(params){
+            let answer=params
+         
+            function reflection(n){
+                if(n== 1){
+                    return
+                }else{
+                    answer = answer*(n-1)
+                    reflection(n-1)
+                }
+            }
+            reflection(params)
+            return answer
+            }
+            console.log(solution(5));
+
+
+
+            //강의  version
+            function solution(params){
+            let answer;
+         
+            function reflection(n){
+                if(n== 1){
+                    return 1
+                }else{
+                    return n*reflection(n-1)
+                }
+            }
+            reflection(params)
+            return answer
+            }
+            console.log(solution(5));
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

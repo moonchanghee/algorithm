@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.08.14
+             * 제목:  조합의 경우수(메모이제이션??)
+             * 내용: 확인
+            **/
+            function solution(a,b){
+            let answer=0
+            let dy = Array.from(Array(5), ()=> Array(5).fill(0)) // => 3행 5열 0으로 초기화 // 여기서 fill(0)은 0으로 다 채운다 라는 뜻
+            console.log(dy)
+            function inner(a,b){
+                if(dy[a][b] > 0) return dy[a][b] //값이 이미 있으면 가지를 뻗지말고 구해져있는 값을 리턴한다
+                if(a === b || b ===0){
+                    return 1
+                }else{ 
+                        return dy[a][b] = inner(a-1, b-1) + inner(a-1,b)
+                        // return inner(a-1, b-1) + inner(a-1,b)
+                }
+            }
+         
+            answer = inner(a,b)
+            return answer
+            }
+            console.log("answer::",solution(5,3));
+//여기서 추가로 메모이제이션으로 시간단축시킴
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+<!-- <html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.08.16
+             * 제목:  수들의 조합
+             * 내용: 
+            **/
+            function solution(n,r,arr){
+            let answer=0
+            let length = arr.length//5
+            let tmp = Array.from({length : r}, () => 0)    
+            function inner(v,s,sum){
+                if(v === r){
+                    console.log("tmp",tmp)
+                    if(sum%6 ==0){
+                        console.log(sum)
+                    }
+                }else{
+                    for(let i = s; i<length;i++){
+                        tmp[v] = arr[i]
+                        inner(v+1,i+1,sum+arr[i])
+                    }
+                }
+            }
+            inner(0,0,0)
+            return answer
+            }
+            arr = [2,4,5,8,12]
+            console.log("answer::",solution(5,3,arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html> -->
+
+
+
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.08.17
+             * 제목: 수들의 조합
+             * 내용: 
+            **/
+            function solution(a,b,arr){
+            let answer=0
+            let tmp = Array.from({length : b}, () => 0)
+            function inner(v,m,sum){
+                if(v === b){
+                    console.log(sum,tmp)
+                    if(sum%6 ===0){
+                        answer++
+                        // console.log(tmp)
+                    }
+                }else{
+                    for(let i=m; i<a; i++){
+                        tmp[v] = arr[i]
+                        inner(v+1,i+1, sum + arr[i])
+
+                    }
+                }
+            }
+            inner(0,0,0)
+         
+            return answer
+            }
+            arr = [2,4,5,8,12]
+            console.log("answer::",solution(5,3,arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

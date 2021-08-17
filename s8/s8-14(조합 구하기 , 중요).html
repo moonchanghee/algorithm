@@ -1,0 +1,73 @@
+<!-- <html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.08.16
+             * 제목:  조합 구하기
+             * 내용: 
+            **/
+            function solution(r,n){
+            let answer=[]
+            let tmp = Array.from({length : n}, () => 0) 
+            
+            function inner(v,m){
+            if(v == n){
+                answer.push(tmp.slice())
+            }else{
+                for(let i =m; i<r; i++ ){
+                   tmp[v] = i
+                   inner(v+1,m+1)
+                }
+            }
+            }
+            
+            inner(0,1)
+
+                return answer            
+            }
+            params = ""
+            console.log("answer::",solution(4,2));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html> -->
+
+
+
+<html>
+    <head>
+        <script>
+                 /** 다시풀기
+             * 작성일: 2021.08.27
+             * 제목:  조합 구하기
+             * 내용: 1부터 N까지 번호가 적힌 구슬이 있습니다. 이 중 M개를 뽑는 방법의 수를 출력하는 프로그
+                    램을 작성하세요.
+            **/
+            function solution(r,n){
+            let answer=0
+            let tmp = Array.from({length : n} , () => 0)
+            function inner(a,b){
+                if(a ==n){
+                    console.log(tmp)
+                }else{
+                    for(let i = b; i<= r; i++){
+                        console.log("a")
+                        tmp[a] = i
+                        inner(a+1,i+1)
+                    }
+                }
+            }
+
+            inner(0,1)
+       
+            return answer
+            }
+            params = ""
+            console.log("answer::",solution(4,2));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
