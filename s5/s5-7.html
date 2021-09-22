@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.09.14
+             * 제목:  아나그램(해쉬)
+             * 내용: 
+            **/
+            function solution(a,b){
+            let answer="yes"
+            let ch = new Map()
+
+            for(let i of a){
+                console.log(i)
+                if(ch.has(i)) ch.set(i,ch.get(i)+ 1)
+                else{
+                    ch.set(i,1)
+                }
+            }
+            
+                // for(let i of b){
+                //     if(ch.has(i))  ch.set(i,ch.get(i)-1)
+                //     else {
+                //         answer = "NO"
+                //         break;}
+                // }
+                // ([...ch.values()].map((e) => {
+                //         if(e != 0){
+                //             answer = "NO"
+                //         } 
+                //     }))
+// ===>
+for(let i of b){
+    if(!ch.has(i) || ch.get(i) === 0){
+        return "NO"
+    } 
+    else {
+        ch.set(i,ch.get(i)-1)
+    }
+}
+            return answer
+            }
+
+
+            let a="abaCC";
+            let b="Caaab";
+            console.log(solution(a, b));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

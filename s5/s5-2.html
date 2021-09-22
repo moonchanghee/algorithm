@@ -1,0 +1,38 @@
+ <html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.08.21
+             * 제목:  a b 두 개의 집합이 주어지면 두 집합의 공통원소를 추출하여 오름차순으로 출력하는 
+             프로그램을 착성하세요
+
+             입력설명 
+             첫 번째 줄에 집합 a의 크기가 주어집니다 
+             두 번째 줄에 n개의 원소가 주어집니다. 원소가 중복되어 주어지지 않습니다
+             세번째 줄에 집합 b의 크기 m이 주어집니다.
+             네 번째 줄에 m개의 원소가 주어집니다. 
+             * 내용: 
+            **/
+            function solution(a,b){
+            let answer=[]
+            let n = a.length
+                for(let i=0; i<n; i++ ){
+                    if(a.indexOf(b[i]) != -1){
+                        answer.push(b[i])
+                    }
+                    
+                }
+
+            return answer.sort((a,b) => {return a-b})
+            }
+            let a=[1, 3, 9, 5, 2];
+            let b=[3, 2, 5, 7, 8];
+            console.log(solution(a, b));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+
+

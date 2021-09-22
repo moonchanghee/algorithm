@@ -1,0 +1,93 @@
+<!-- <html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.06.23
+             * 제목: 경로 탐색
+             * 내용: 
+            **/
+            function solution(params){
+            let answer=0
+                
+            return answer
+            }
+            params = [[1, 2], [1, 3], [1, 4], [2, 1], [2, 3], [2, 5], [3, 4], [4, 2], [4, 5]];
+            console.log("answer::",solution(5, params));
+            //정점의 수 : 5,,  간선의 수 : 9
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+
+
+ -->
+ <!-- 다익스트라 알고리즘 
+ 1. 모든 꼭지점을 미방문 상태로 만든다.
+ 2. 시작 정점을 정한다
+ 3. 시작정점 a를 방문상태로 처리한다
+ 4. 정점 a에 인접한 정점으로 가는 모든 거리 값을 기록
+ 5. 정점 a에 각각의 인접 정점과 연결된 거리 중에서, 최단 거리를 갖는 정점을 찾는다(최소 가중치 탐색)
+ 6. 최단 거리를 갖은 경로를 통해 다음 정점으로 이동한다.
+ 7. 이동 거리를 기록한다.
+ 8. 다음 정점을 b라고 가정하면, 정점 b에 인접한 정점으로 가는 모든 거리 값에 이동거리를 더한 값과 (5)에서 기록한 최단거리 값을 서로 비교한다. 
+ 9. 정점 b를 방문상태로 처리한다.   
+-->
+ 
+<!-- let dy = Array.from(Array(5), ()=> Array(5).fill(0)) // => 3행 5열 0으로 초기화 // 여기서 fill(0)은 0으로 다 채운다 라는 뜻 -->
+ <html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.08.23
+             * 제목: 경로 탐색
+             * 
+             * 단점은 정점이 많아지면 행렬을 그만큼 크게 만들고 0 으로 초기화해야 하므로 효율이 떨어진다 
+             * 따라서 정점이 많을 경우 인접리스트를 활용한다.
+            **/
+            function solution(n,arr){
+
+                let answer =[]
+                let answer2 = 0
+                let tmp = Array.from(Array(n+1), ()=> Array(n+1).fill(0))
+                let ch = Array.from({length : n+1}, () => 0)
+
+
+                for(let [a,b] of arr){
+                    tmp[a][b] = 1
+                }
+                console.log(tmp)
+
+                function inner(v){
+                    if(v === n){
+                        answer2++
+                        console.log(answer)
+                    }
+                    else{
+                        for(let i=1; i<=n ; i++){
+                            if(tmp[v][i] == 1 && ch[i] != 1 ){
+                                ch[i] =  1
+                                answer.push(i)
+                                inner(i)
+                                ch[i] =0
+                                answer.pop(i)
+                            }
+                        }
+                    }
+                }
+                answer.push(1)
+                ch[1] =1
+                inner(1)
+                console.log("answer2",answer2)
+
+
+            return answer 
+            }
+            params = [[1, 2], [1, 3], [1, 4], [2, 1], [2, 3], [2, 5], [3, 4], [4, 2], [4, 5]];
+            console.log("answer::",solution(5, params));
+            //정점의 수 : 5,,  간선의 수 : 9
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

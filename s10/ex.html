@@ -1,0 +1,88 @@
+<!-- <html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 
+             * 제목:  
+             * 내용: 
+            **/
+            function solution(n, arr) {
+    var answer = 0;
+    let queue = []    
+    for(let i=0; i<n; i++){
+        for(let j=0; j<n; j++){
+            if(i != j && arr[i][j] === 1){
+                arr[i][j] === 0
+                queue.push([i,j])
+                console.log(queue)
+                // queue.shift()
+                // console.log(queue)
+            }
+    
+        }
+    }
+
+
+            return answer
+            }
+            params = [[1,1,0],[1,1,0],[0,0,1]]
+            console.log("answer::",solution(3,params));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html> -->
+
+
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 
+             * 제목:  
+             * 내용: 
+            **/
+     
+
+    function solution(begin, target, words) {
+    var answer = [];
+    let queue = []
+    let n = words.length
+    let i =0
+    let count = 0
+    queue.push(begin)
+    
+    
+    // while(1){
+        while(i <= words.length ){
+    let data =  queue.shift()
+    let nd = words[i]
+        for(let i=0; i<data.length; i++){
+            if(nd.indexOf(data[i]) != -1){
+                console.log(nd,nd.indexOf(data[i]))
+                count++
+                console.log(count) 
+            }
+        }
+        if(count === 2){
+            queue.push(nd)
+            answer.push(nd)
+            console.log(answer)
+            count = 0
+    }    
+        i++
+        
+    }
+            return answer
+            }
+            params = ""
+            
+            arr = 	["hot", "dot", "dog", "lot", "log", "cog"]
+            console.log("answer::",solution("hit","cog",arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.08.26
+             * 제목:  이진트리 넓이우선탐색(bfs)
+             * 내용: 
+            **/
+
+            //my version
+            function solution(){
+            let answer=0
+            let i = 1
+            let queue = []
+            let shft = []
+            queue.push(i)
+
+            while(queue.length ){
+                data  = queue.shift()
+                shft.push(data)
+                if(data*2 <= 7){
+                queue.push(data*2)
+                queue.push(data*2+1)
+                }
+                data++
+            }
+            
+            console.log(shft)
+            return answer
+            }
+            params = ""
+            console.log("answer::",solution());
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

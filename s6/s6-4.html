@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.09.16
+             * 제목:  후위식 연산
+             * 내용: 후위연산식이 주어지면 연산한 결과를 출력하는 프로그램을 작성하세요
+             * 만약 3*(5+2)-9 를 후위 연산식으로 표현하면 352+ *9- 로 표현되며
+             * 그 결과는 12 입니다.
+            **/
+            function solution(str){
+            let answer=0
+            let ch = []
+            str.split('').forEach((e) => {
+                if(isNaN(e)){
+                    let rd = ch.pop()
+                    let ld = ch.pop()
+                    if(e === "+"){
+                        ch.push(ld + rd)
+                    } 
+                    if(e === "-"){
+                        ch.push(ld - rd)
+                    } 
+                    if(e === "/"){
+                        ch.push(ld / rd)
+                    } 
+                    if(e === "*"){
+                        ch.push(ld * rd)
+                    }
+                }else{
+                    ch.push(Number(e))
+                }
+        
+        
+        })
+        
+            console.log(ch)
+            return answer
+            }
+            let str="352+*9-";
+            console.log(solution(str));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

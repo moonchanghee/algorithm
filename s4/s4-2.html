@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         <script>
                  /**
@@ -70,6 +70,45 @@ let arr = [32, 55, 62, 20, 250, 370, 200, 30, 100]
         
         console.log("answer::" , solution(arr))
         console.log("answer::" , solution2(arr))
+        </script>
+    </head>
+    <body>
+    </body>
+</html> -->
+
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성2: 2021.08.18
+             * 제목:  
+             * 내용: 
+            **/
+            function solution(arr){
+            let answer=[]
+         
+            for(x of arr){
+                // let num = String(x).split("").revers()
+                let num = Number(String(x).split("").reverse().join(""))
+                // console.log(num)
+                console.log(num,chFnc(num))
+                if(chFnc(num)){
+                    answer.push(num)
+                }
+                
+            }
+            function chFnc(n){ //소수판별
+                if(n ===1) return 0
+                for(let i = 2; i<Math.floor(n/2); i++){
+                    if(n % i === 0 ) return 0
+                }
+                return 1
+            }
+            return answer
+            }
+            let arr=[32, 55, 62, 20, 250, 370, 200, 30, 100];
+            console.log(solution(arr));
+
         </script>
     </head>
     <body>
