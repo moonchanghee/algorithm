@@ -61,26 +61,34 @@
     <head>
         <script>
                  /**
-             * 작성일: 2021.09.16
+             * 작성일: 2021.09.25
              * 제목:  쇠막대기
              * 내용: 
             **/
             function solution(a){
             let answer=0
             let ch = []
-            
-            a.split("").forEach((e) => {
-                 if(e === "("){
-                     ch.push(e)
-                 }else{
+
+            a.split("").forEach((e,index) => {
+                if(e === "("){
                     ch.push(e)
-                 }
+                }else{
+                    if(a[index-1] === "("){
+                        ch.pop()
+                        answer += ch.length
+                    }else{
+                        ch.pop()
+                        answer += 1
+                    }
+                }
             })
+          
 
          
             return answer
             }
-            let a="()(((()())(())()))(())";
+            // let a="()(((()())(())()))(())";
+            let a= "(((()(()()))(())()))(()())"
             console.log(solution(a));
 
         </script>
