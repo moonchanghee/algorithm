@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.09.26
+             * 제목:  버블 정렬
+             * 내용: 
+             * n개의 숫자가 입력되면 오름차순으로 정렬하여 출력하는 프로그램을 작성하세요.
+             * 정렬하는 방법은 버블정렬입니다.
+            **/
+            function solution(arr){
+            let answer=0
+            let length = arr.length
+            for(let i=0; i<length-1; i++){
+                for(let j=0; j<length-i-1; j++){
+                    console.log(i,j) 
+                    if(arr[j] > arr[j+1]){
+                        [arr[j] , arr[j+1]] = [arr[j+1] , arr[j]] 
+                    }
+                }   
+            }
+            
+            return arr
+            }
+            let arr=[13, 5, 11, 7, 23, 15];
+            console.log(solution(arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

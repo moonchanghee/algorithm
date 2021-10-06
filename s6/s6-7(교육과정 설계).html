@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.09.26
+             * 제목:  교육과정 설계
+             * 내용: 
+             현수는 1년 과정의 수업계획을 짜야 합니다.
+             수업중에는 필수과목이 있습니다. 이 필수과목은 반드시 이수해야 하며
+             그 순서도 정해져 있습니다. 만약 총 과목이 a,b c, d, e , f, g 가 있고
+             여기서 필수과목이 cba로 주어지면 필수과목은 cba과목이며 이 순서대로 꼭 수업계획을 짜야 합니다
+             여기서 순서란 b과목은 c과목을 이수한 후에 들어야하고 a과목은 c와 b를 이수한 후에 들어야 한다는 것이빈다
+             현수가 c,b,d,a,g,e로 수업 계획을 짜면 제대로 된 설계이지만
+             c,g,e,a,d,b 순서로 짰다면 잘 못 설계된 수업계획이 됩니다
+             수업계획은 그 순서대로 앞에 수업이 이수되면 다음 수업을 시작하다는 것으로 해석합니다 수업 계획서상의
+             각 과목은 무조건 이수된다고 가정합니다
+             필수과목순서가 주어지면 현수가 짠 n개의 수업설계가 잘 된 것이면 yes 잘못된 것이면 no를 출력하는 프로그램을 작성하세요
+            **/
+            function solution(a,b){
+            // let answer= "no"
+            // let arr = b.split("")
+            // let ch = []
+        //     arr.forEach((e) => {
+        //     if(a.split("").indexOf(e) != -1){
+        //         ch.push(e)
+        //     }
+        //    }) 
+        //  if(ch.join('') === a ){
+        //      answer = "yes"
+        //  } ///my version
+
+
+        let answer = "yes"
+        let queue = a.split('')
+        for(let x of b){
+            console.log(queue.includes(x))
+            if(queue.includes(x)){
+                if(x !== queue.shift()){
+                    answer = "no"
+                }
+            }
+        }
+        return answer
+    }
+            let a="CBA";
+            let b="CBDAGE";
+            console.log(solution(a, b));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
