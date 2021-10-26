@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.10.20 
+             * 제목:  바둑이 승차
+             * 내용: c킬로그램을 넘기지 않고 n마리의 바둑이를 트럭에 태울 수 있는 가장 무거운 무게를 구하라
+             * 
+            **/
+            function solution(t,arr){
+            let answer=0
+            const inner = (l,sum) => {
+                if(l === arr.length){
+                    if(sum < t)
+                    answer = Math.max(answer, sum)
+                }else{
+                    inner(l+1 , sum + arr[l] )
+                    inner(l+1 , sum )
+                }
+            }
+            inner(0,0)
+            return answer
+            }
+            let arr=[81, 58, 42, 33, 61];
+            console.log(solution(259, arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

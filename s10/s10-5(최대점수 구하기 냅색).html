@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.10.19
+             * 제목: 최대점수 구하기
+             * 내용: 이번 정보올림피아드 대회에서 좋은 성적을 내기 위하여 현수는 선생님이 주신 n개의 문제를 풀려고 합니다.
+             * 각 문제는 그것을 풀었을 때 얻는 점수와 푸는데 걸리는 시간이 주어지 됩니다. 
+             * 제한시간 안에 최대점수를 얻을 수 있도록 할것
+            **/
+            function solution(time,arr){
+            let answer=0
+            let ch = Array.from({length : time+1 },() => 0)
+
+            for(let i=0; i<arr.length; i++){
+                for(let j=time; j >= arr[i][1]; j-- ){
+                    ch[j] = Math.max(ch[j],ch[j - arr[i][1]] +arr[i][0])
+                }
+            }
+            console.log(ch)
+            return answer
+            }
+ 
+            let arr=[[10, 5], [25, 12], [15, 8], [6, 3], [7, 4]]; // 문제의 점수, 푸는 시간
+            console.log(solution(20, arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

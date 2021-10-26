@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.10.06
+             * 제목:  뮤직비디오(결정알고리즘)
+             * 내용: 
+            **/
+            function solution(target, arr){
+            let answer=0
+            let lt =9, rt = 45, sum = 0 , ch = []
+                //lt = arr 에서 제일 큰값 ... 담을 수 있는 최소값이 들어가야됨
+                //rt = arr 원소 합
+
+            while(lt <= rt){
+                mid = Math.floor((lt+rt)/2)
+                for(let x of arr){
+                    if(sum <= mid){
+                        sum += x
+                    }else{
+                        ch.push(sum)
+                        sum = 0
+                    }
+                } 
+                if(ch.length === target){
+                    console.log("mid",mid)
+                    return answer = ch.length
+                }
+                else if(ch.length < target){ //하나의 dvd에 담는 총합 즉 mid를 줄여야 함 dvd수를 늘려야한다 // ch.length가 dvd 개수
+                    rt = mid -1
+                }else{
+                    lt = mid +1
+                }
+            }
+            return answer
+            }
+            let arr=[1, 2, 3, 4, 5, 6, 7, 8, 9];
+            console.log(solution(3, arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

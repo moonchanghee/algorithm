@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.10.19
+             * 제목: 이진트리 순회
+             * 내용: 
+            **/
+            function solution(params){
+            let answer=0
+             
+            const inner = (n) => {
+                if(n> 7){
+                    return
+                }else{
+                    console.log(n)
+                    inner(n*2)
+                    inner(n*2+1)                    
+                }
+            } 
+
+            inner(1)
+
+            return answer
+            }
+            params = ""
+            console.log("answer::",solution(1));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

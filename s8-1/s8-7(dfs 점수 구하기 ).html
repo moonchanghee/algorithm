@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.10.20
+             * 제목:  최대점수 구하기(dfs)
+             * 내용: 
+            **/
+            function solution(total, point , time){
+            let answer=0
+            
+            function inner(l,psum, tsum){
+                if(tsum > total)return
+                if(l === point.length){
+                    if(tsum <= total){
+                        answer = Math.max(answer,psum)
+                    }
+                }else{
+                   inner(l+1 , psum + point[l], tsum + time[l])
+                   inner(l+1 , psum , tsum) 
+                }
+            }
+            inner(0,0,0)
+            
+         
+            return answer
+            }
+            let ps=[10, 25, 15, 6, 7]; //점수
+            let pt=[5, 12, 8, 3, 4] // 시간
+            console.log(solution(20, ps, pt));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+
+

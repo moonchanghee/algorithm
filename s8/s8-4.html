@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         <script>
                  /**
@@ -29,6 +29,48 @@
                 }
             }
             inner(1)
+            return answer
+            }
+            params = 3
+            console.log("answer::",solution(params));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html> -->
+
+
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.10.12
+             * 제목:  부분집합 구하기
+             * 내용: 
+            **/
+            function solution(params){
+            let answer=[]
+            let ch = Array.from({length:params+1}, ()=>0)
+
+            function inner(level){
+                tmp = ""
+                if(level === params+1){
+                    for(let i=1; i <= ch.length; i++){
+                        if(ch[i] === 1){
+                            tmp += i         
+                        }
+                    }
+                    answer.push(tmp)
+                }else{
+                    ch[level] = 1
+                    inner(level+1)
+                    ch[level] = 0                    
+                    inner(level+1)
+                }
+            }
+            inner(1)
+         
             return answer
             }
             params = 3

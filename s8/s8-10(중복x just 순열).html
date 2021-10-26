@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         <script>
                  /**
@@ -27,8 +27,53 @@
                     }
                 }
             }
-         
             reflection(0)
+            return answer
+            }
+            let arr=[3, 6, 9];
+            console.log(solution(2, arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html> -->
+
+
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 
+             * 제목:  
+             * 내용: 
+            **/
+            function solution(target,arr){
+            let answer=[]
+            let length = arr.length
+            let ch = Array.from({length:length}, () => 0)
+            let tmp = Array.from({length:target}, () => 0)
+            function inner(v){
+                if(v === target){
+                    console.log("tmp",tmp)
+                }else{
+                   for(let i=0; i < length; i++){
+                       if(ch[i] === 0){
+                           ch[i] = 1
+                           tmp[v] = arr[i]
+                           console.log("v",v)
+                           console.log("huihii",arr[i])
+                           console.log(ch[i])
+                           console.log(tmp[v])
+                        // tmp =arr[i]
+                           inner(v+1)
+                           ch[i] = 0
+                       }
+                   } 
+                }
+            }
+            inner(0)
+
             return answer
             }
             let arr=[3, 6, 9];

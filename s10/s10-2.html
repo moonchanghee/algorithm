@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.10.18
+             * 제목:   돌다리 건너기
+             * 내용: 철수는 학교에 가는데 개울을 만났습니다 개울은 n개의 돌로 다리를 만들어 놓았습니다. 철수는 돌다리를 건널 때 한 번에 한 칸 또는 
+             두 칸씩 건너뛰면서 돌다리를 건널 수 있습니다. 철수가 개울을 건너는 방법은 몇 가지 일까요?
+            **/
+            function solution(params){
+            let answer=0
+            let ch = Array.from({length : params+1} , () => 0)
+            ch[1] = 1 
+            ch[2] = 2
+            for(let i=3; i <= params+1; i++){
+                ch[i] = ch[i-2] + ch[i-1]
+            } 
+
+console.log(ch)
+         
+            return ch[ch.length-1]
+            }
+            params = ""
+            console.log(solution(7));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

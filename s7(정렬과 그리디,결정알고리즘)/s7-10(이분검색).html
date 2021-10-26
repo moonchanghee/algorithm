@@ -9,11 +9,26 @@
              * 
              * 
             **/
-            function solution(params){
+            function solution(target,arr){
             let answer=0
-            params.map(() => {
-                
+            arr.sort((a,b) => {
+                return a-b
             })
+            let lt = 0, rt = arr.length-1
+            console.log(arr)
+            while(lt<=rt){
+                mid = Math.floor((lt+rt)/2)
+                if(arr[mid] === target){
+                    console.log("answer",arr[mid])
+                    return answer = mid
+                }else if(arr[mid] > target){
+                    console.log(arr[mid],target)
+                    rt = mid -1
+                }else{
+                    console.log(arr[mid],target)
+                    lt = mid +1
+                }
+            }
 
             return answer
             }

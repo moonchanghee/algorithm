@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.10.18
+             * 제목:  동전교환
+             * 내용: 다음과 같이 여러 단위의 동전들이 주어져 있을때 거스름돈을 가장 적은 수의 동전으로 교환해주려면 어떻게 주면 되는가
+             * 각 단위의 동전은 무한정 쓸 수 있다
+            **/
+            function solution(n, arr){
+            let answer=0
+            let ch = Array.from({length : n+1} , () => 1000)
+            ch[0] = 0
+            for(let i=0; i<arr.length; i++){
+                for(let j=arr[i]; j <= n; j++){
+                        ch[j] = Math.min(ch[j] ,ch[j-arr[i]] + 1 )  
+                        // console.log(ch[j-arr[i]])
+                        // ch[j] = Math.min(ch[j] ,5 )  
+                }
+            }
+            console.log(ch)
+            return ch[n]
+            }
+
+            let arr=[1, 2, 5];
+            console.log(solution(15, arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

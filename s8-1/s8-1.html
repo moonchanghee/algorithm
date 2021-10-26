@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.10.19
+             * 제목:  재귀함수
+             * 내용: 자연수 n이 입력되면 재귀함수를 이용하여 1부터 n까지를 출력하는 프로그램 작성
+            **/
+            function solution(params){
+            let answer=0
+            const inner = (n) => {
+                if(n > params){
+                    return
+                }else{
+                    inner(n+1)
+                    console.log(n)
+                }
+            }
+
+            inner(1)
+
+            return answer
+            }
+            let num = 7
+            console.log("answer::",solution(num));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

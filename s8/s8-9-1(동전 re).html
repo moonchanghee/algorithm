@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.10.19
+             * 제목:  동전교환 
+             * 내용: 
+            **/
+            function solution(total, arr){
+            let answer=100
+            let ch = []
+            
+            function inner(n,sum){
+                if(n > answer){ return}
+                if(sum >= total){
+                    answer = Math.min(answer,n)
+                    console.log("asdf")
+                }else{
+                    for(let i=0; i < arr.length; i++){
+                        inner(n+1,sum + arr[i])
+                    }
+                }
+            }
+
+            inner(0,0)
+
+
+            return answer
+            }
+            let arr=[1, 2, 5];
+            console.log(solution(15, arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
