@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.11.04
+             * 제목:  중복순열
+             * 내용: 
+            **/
+            function solution(arr,b){
+            let answer=[]
+            let tmp = ""
+                let ch = Array.from({length : b} , () => 0)
+                // let ch = []
+            function inner(l){
+                if(l === b){
+                    console.log("end")
+                    tmp = ""
+                }else{
+                    for(let i=0; i < arr.length; i++){
+                        console.log("inner" , tmp += arr[i])
+                        inner(l+1)
+                    }
+                }
+            }
+            inner(0)
+
+         
+            return answer
+            }
+            arr = [1,2,3]
+            console.log(solution(arr, 2));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
