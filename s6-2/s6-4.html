@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.12.07
+             * 제목: 후위식 연산
+             * 내용: 
+            **/
+            function solution(params){
+            let answer=0
+            let arr = params.split("")
+            let result = []
+            let lt = 0
+            let rt = 0
+            for(item of arr){
+                if(!isNaN(item)){
+                    result.push(item)
+                }else{
+                    rt = Number(result.pop()) 
+                    lt = Number(result.pop())   
+                    console.log(lt,rt)
+                    if(item === "-") result.push(lt-rt) 
+                    if(item === "+") result.push(lt+rt)
+                    if(item === "/") result.push(lt/rt)
+                    if(item === "*") result.push(lt*rt)
+                }
+            }
+
+            return result
+            }
+            let str="352+*9-";
+            console.log(solution(str));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

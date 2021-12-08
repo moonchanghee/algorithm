@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.12.08
+             * 제목:  special
+             * 내용: 
+            **/
+            function solution(params){
+            let answer=0
+                for(let i=0; i<params.length-1; i++){
+                    for(let j=0; j<params.length-1-i; j++){
+                        if(params[j] > 0 && params[j+1] < 0 ){
+                            [params[j] , params[j+1]] = [params[j+1], params[j]]
+                        }
+                    }
+                }
+                console.log(params)
+            return answer
+            }
+            let arr=[1, 2, 3, -3, -2, 5, 6, -6];
+            console.log(solution(arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

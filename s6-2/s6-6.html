@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.12.07
+             * 제목:  
+             * 내용: 
+            **/
+            function solution(total,n){
+            let answer=1
+            let arr = Array.from({length : total} , (v,i) => i+1)
+
+            while(arr.length != 1){
+                    let data = arr.shift()
+                    if(answer === n){
+                        answer = 0
+                    }else{
+                        arr.push(data)
+                    }
+                answer++
+            }
+
+            console.log(arr)
+
+            return answer
+            }
+            console.log(solution(8, 3));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

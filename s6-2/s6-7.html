@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.12.08
+             * 제목:  
+             * 내용: 
+            **/
+            function solution(a,b){
+            let answer="yes"
+            // let arr = b.split("")
+            // let Aarr = a.split("")
+            // let result = []
+            // Aarr.map((e) => {
+            //     if(arr.includes(e)){
+            //         result.push(e)
+            //     }
+            // })
+            // if(result.join("") === a){
+            //     answer = "yes"
+            // }
+            let arr = a.split("")
+
+            for(item of b){
+                if(arr.includes(item)){
+                    if(arr.shift() != item){
+                        answer = "no"
+                    }
+                }
+            }
+
+            return answer
+            }
+            let a="CBA";
+            let b="CBDAGE";
+            console.log(solution(a, b));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

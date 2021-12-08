@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.12.06 
+             * 제목:  괄호 문자 제거 
+             * 내용: 
+            **/
+            function solution(p){
+            let answer=0
+            let arr = p.split("")
+            let ch = []
+
+            for(l of arr){
+                if(l != ")"){
+                    ch.push(l)    
+                }
+                else{
+                    while(ch.pop() !== "("){}
+                    
+                }
+            }
+            console.log(ch)
+            return answer
+            }
+            let str="(A(BC)D)EF(G(H)(IJ)K)LM(N)";
+            console.log(solution(str));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

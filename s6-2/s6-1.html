@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 
+             * 제목:  
+             * 내용: 2021.12.06
+            **/
+            function solution(params){
+            let answer="Yes"
+            let arr = params.split("")  
+            let ch = []
+            arr.map((e) => {
+                if(e === ")"){
+                ch.pop()
+                }else ch.push(e)
+            })
+            if(ch.length != 0){
+                return answer = "no"
+            }
+
+            return answer
+            }
+            let a="(()";
+            console.log(solution(a));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

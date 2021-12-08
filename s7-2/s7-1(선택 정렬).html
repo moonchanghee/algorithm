@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.12.08
+             * 제목: 선택 정렬
+             * 내용: 
+            **/
+            function solution(p){
+            let answer=0
+            let idx = 0
+            
+            for(let i=0; i<p.length-1; i++){
+                idx = i
+                for(let j=i+1; j<p.length; j++){
+                    if(p[j] < p[idx]){
+                        idx = j
+                    }
+                }
+                [p[i] , p[idx]] = [p[idx] , p[i]]
+            }
+            console.log(p)
+            return answer
+            }
+            let arr=[13, 5, 11, 7, 23, 15];
+            console.log(solution(arr));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

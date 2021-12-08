@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일:2021.12.08 
+             * 제목:  버블정렬
+             * 내용: 
+            **/
+            function solution(p){
+            let answer=0
+            
+            for(let i=0; i<p.length; i++){
+                for(let j=0; j<p.length-1-i; j++){
+                    if(p[j+1] < p[j]){
+                        [p[j] , p[j+1]] = [p[j+1] , p[j]]
+                    }
+                }
+            }
+         console.log(p)
+            return answer
+            }
+            let arr=[13, 5, 11, 7, 23, 15];
+            console.log(solution(arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
