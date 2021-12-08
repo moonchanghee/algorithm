@@ -1,3 +1,3 @@
 # algorithm
-js algorithm 공부
+js algorithm 
 
