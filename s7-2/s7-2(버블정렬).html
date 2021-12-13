@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         <script>
                  /**
@@ -21,6 +21,38 @@
             }
             let arr=[13, 5, 11, 7, 23, 15];
             console.log(solution(arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html> -->
+
+
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.12.12
+             * 제목:  버블정렬
+             * 내용: 
+            **/
+            function solution(p){
+            let answer=0
+            let l = p.length
+                for(let i=0; i<l; i++){
+                    for(let j=0; j<l-1-i; j++ ){
+                        if(p[j] > p[j+1]){
+                            [p[j] , p[j+1]] = [p[j+1] , p[j]]
+                        }
+                    }
+                }
+            console.log(p)
+
+            return answer
+            }
+            let arr=[13, 5, 11, 7, 23, 15];
+            console.log("answer::",solution(arr));
 
         </script>
     </head>

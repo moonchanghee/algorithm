@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         <script>
                  /**
@@ -31,6 +31,46 @@
             }
 
 
+            return answer
+            }
+            let arr=[23, 87, 65, 12, 57, 32, 99, 81];
+            console.log(solution(32, arr));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html> -->
+
+<html>
+    <head>
+        <script>
+                 /**
+             * 작성일: 2021.12.12
+             * 제목:  이분검색
+             * 내용: 
+            **/
+            function solution(target,arr){
+            let answer=0
+            lt = 0
+            rt = arr.length-1
+                arr.sort((a,b) =>{
+                    return a-b
+                })
+
+            while(lt <= rt){
+                let mid = Math.floor((lt+rt)/2)
+                if(arr[mid] === target){
+                    console.log(arr[mid])
+                    return answer = mid
+                }else if(arr[mid] > target){
+                    console.log("l")
+                    rt = mid-1
+                }else{
+                    console.log("r")
+                    lt = mid+1
+                }
+            }
             return answer
             }
             let arr=[23, 87, 65, 12, 57, 32, 99, 81];
