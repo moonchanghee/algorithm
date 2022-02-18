@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <script>
+        /**
+    * 작성일: 2020.02.18
+    * 제목:  least recently used
+    * 내용: 
+   **/
+        function solution(s, arr) {
+            let answer = 0
+            let charr = []
+
+            arr.forEach((e, index) => {
+                let ch = 0
+                let i = 0
+                for (i = 0; i < s; i++) {
+                    if (charr[i] === e) {
+                        ch = i
+                    }
+                }
+                if (ch) {
+                    charr.slice(i, 1)
+                    charr.unshift(e)
+                } else {
+
+                    charr.unshift(e)
+                    charr.pop()
+                }
+
+            })
+
+
+
+
+            return charr
+        }
+        let arr = [1, 2, 3, 2, 6, 2, 3, 5, 7];
+        console.log(solution(5, arr));
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <script>
+        /**
+    * 작성일: 2020.02.18
+    * 제목:  삽입정렬
+    * 내용: 
+   **/
+        function solution(arr) {
+            let answer = 0
+            let length = arr.length
+            for (let i = 0; i < length; i++) {
+                let tmp = arr[i], j = 0
+                for (j = i - 1; j >= 0; j--) {
+                    if (arr[j] > tmp) {
+                        arr[j + 1] = arr[j]
+                    } else {
+                        break
+                    }
+                }
+                arr[j + 1] = tmp
+            }
+
+
+            return arr
+        }
+        let arr = [11, 7, 5, 6, 10, 9];
+        console.log("answer::", solution(arr));
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html

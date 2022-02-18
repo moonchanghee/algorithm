@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <script>
+        /**
+    * 작성일: 2022.02.16
+    * 제목:  선택정렬
+    * 내용: 
+   **/
+        function solution(arr) {
+            let answer = 0
+            let length = arr.length
+            let j = 0
+            for (let i = 0; i < length - 1; i++) {
+                let min = i
+                for (j = i + 1; j < length; j++) {
+                    if (arr[min] > arr[j]) min = j
+                }
+                [arr[i], arr[min]] = [arr[min], arr[i]]
+                // arr[i] = arr[min]
+            }
+
+
+
+
+
+
+            return arr
+        }
+
+        let arr = [13, 5, 11, 7, 23, 15];
+
+        console.log("answer::", solution(arr));
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
