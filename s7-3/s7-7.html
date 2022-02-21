@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <script>
+        /**
+    * 작성일:2020.02.20 
+    * 제목:  좌표정렬
+    * 내용: 
+   **/
+        function solution(params) {
+            let answer = 0
+            params.sort((a, b) => {
+                if (a[0] === b[0]) {
+                    return a[1] - b[1]
+                }
+                return a[0] - b[0]
+            })
+            return params
+        }
+        let arr = [[2, 7], [1, 3], [1, 2], [2, 5], [3, 6]];
+        console.log(solution(arr));
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
