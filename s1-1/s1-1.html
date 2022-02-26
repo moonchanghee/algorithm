@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <script>
+        /**
+    * 작성일: 2022.02.23
+    * 제목:  
+    * 내용: 
+   **/
+        function solution(p) {
+            let answer = []
+            let ch = Array.from({ length: p + 1 }, () => 0)
+            let tmp = ""
+            function inner(l) {
+                if (l == p + 1) {
+                    for (let i = 0; i < ch.length; i++) {
+                        if (ch[i] == 1) {
+                            tmp += i
+                        }
+                    }
+                    answer.push(tmp)
+                    tmp = ""
+                } else {
+                    ch[l] = 1
+                    inner(l + 1)
+                    ch[l] = 0
+                    inner(l + 1)
+                }
+
+            }
+            inner(1)
+
+
+            return answer
+        }
+        console.log(solution(3));
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
