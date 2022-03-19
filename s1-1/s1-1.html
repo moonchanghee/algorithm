@@ -9,30 +9,19 @@
    **/
         function solution(arr) {
             let answer = []
-            let l = arr.length
-            for (let i = 0; i < l; i++) {
-                let data = Number(arr[i].toString().split("").reverse().join(""))
-                if (ch(data)) {
-                    answer.push(data)
-                }
-            }
 
-            function ch(n) {
-                if (n == 1) {
-                    return 0
-                } else {
-                    for (let i = 2; i < n; i++) {
-                        if (n % i == 0) {
-                            return 0
-                        }
-                    }
-                }
-                return 1
-            }
+            // answer = arr.filter((e, i) => {
+            //     return arr.indexOf(e) == i
+            // })
+            answer = arr.filter((e, i) => {
+                return arr.indexOf(e) == i
+            })
+
+
             return answer
         }
-        let arr = [32, 55, 62, 20, 250, 370, 200, 30, 100];
-        console.log(solution(arr));
+        let str = ["good", "time", "good", "time", "student"];
+        console.log(solution(str));
     </script>
 </head>
 
